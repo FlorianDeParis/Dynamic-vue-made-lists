@@ -1,0 +1,264 @@
+.splashScreen{
+    width: 100%;
+    height: 910px;
+    background-image: url('../img/image-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.splashScreen > div{
+    height: 100%;
+    position: relative;
+}
+
+.splashScreen .wText{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+}
+
+.splashScreen .wText h1{
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+
+.splashScreen .wText p{
+    font-style: italic;
+    margin-top:0;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+
+.splashScreen .wText a{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+    line-height: 55px;
+    padding: 0 95px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.splashScreen .wText a:hover{
+    color: #33a9fd;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.logo{
+    display: inline-block;
+    margin-top: 30px;
+    width:115px;
+    height:30px;
+    background: url('../img/logo-light.svg') no-repeat;
+    background-size: contain;
+}
+.logo a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.arrowDown{
+    cursor: pointer;
+    display: inline-block;
+    width:15px;
+    height:15px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../img/icon-chevrons-down.svg') no-repeat;
+    background-size: contain;
+}
+
+section#app{
+    padding-top: 15px;
+}
+
+.filters{
+    width: 100%;
+}
+
+.filters .counter{
+    color: #90909f;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filters .fltList{
+    color: #33a9fd;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    margin-right: 20px;
+}
+
+.filters .fltList:after{
+    content:' ';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 5px 0 5px;
+    border-color: #33a9fd transparent transparent transparent;
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    transform: translateX(100%) translateY(-50%);
+}
+
+.filters .fltList > div{display: none;}
+.filters .fltList[opened] > div{
+    z-index: 2;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    right: -20px;
+    transform: translateY(100%);
+    color:#33a9fd;
+    text-align: right;
+    background: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px 1px #c9c9c929;
+    box-shadow: 1px 1px 3px 1px #c9c9c929;
+}
+
+.filters .fltList > div > span{
+    font-weight: bold;
+    display: block;
+}
+
+section#app{
+    padding-bottom: 95px;
+}
+
+section#app > div > ul{
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+section#app > div > ul li{
+    cursor: pointer;
+    position: relative;
+    list-style-type: none;
+    height: 130px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 3px 1px #c9c9c929;
+    box-shadow: 1px 1px 3px 1px #c9c9c929;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+section#app > div > ul li > div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section#app > div > ul li h3{
+    display: block;
+    color:#33a9fd;
+    font-weight: bold;
+    margin: 0;
+}
+
+section#app > div > ul li span[data-type="phone"]{
+    position: relative;
+    margin-left: 18px;
+}
+
+section#app > div > ul li > span{
+    display: inline-block;
+    position: absolute;
+}
+
+section#app > div > ul li span[data-type]{
+    font-size: 12px;
+    color: #000;
+}
+section#app > div > ul li > span[data-type="city"]{
+    top: 15px;
+    right: 15px;
+}
+
+section#app > div > ul li > span[data-type="email"]{
+    bottom: 15px;
+    right: 15px;
+}
+
+section#app > div > ul li span[data-type]:after{
+    content:' ';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    transform: translateX(-100%);
+
+}
+
+section#app > div > ul li span[data-type="city"]:after{
+    background: url(../img/icon-navigation.svg) no-repeat center;
+}
+
+section#app > div > ul li span[data-type="phone"]:after{
+    background: url(../img/icon-phone.svg) no-repeat center;
+}
+
+@media screen and (max-width:1080px){
+    .splashScreen{
+        height: 600px;
+    }
+
+    section#app > div > ul{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:768px){
+    section#app > div > ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width:640px){
+    section#app{
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:540px){
+    .splashScreen{
+        height: 600px;
+    }
+
+    .splashScreen .wText h1{
+        font-size: 24px;
+    }
+    
+    .splashScreen .wText p{
+        font-size: 20px;
+    }
+
+    .splashScreen .wText a{
+       width: 100%;
+       padding: 0;
+    }
+}

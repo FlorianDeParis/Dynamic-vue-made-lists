@@ -1,0 +1,190 @@
+html *{
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background: #f7f8f9;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer{
+    -webkit-box-shadow: 1px -17px 30px 8px rgba(194,194,194,0.12);
+    -moz-box-shadow: 1px -17px 30px 8px rgba(194,194,194,0.12);
+    box-shadow: 1px -17px 30px 8px rgba(194,194,194,0.12);
+    background-color: #f9fafc;
+    color: #90909f;
+    padding-top: 75px;
+    padding-bottom: 45px;
+    box-sizing: border-box;
+}
+
+footer .glossary{
+    padding-bottom: 60px;
+}
+
+footer .glossary .glLogo{
+    float: left;
+    display: inline-block;
+    width:115px;
+    height:30px;
+    background: url('../img/logo-dark.svg') no-repeat;
+    background-size: contain;
+}
+footer .glossary .glLogo a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+footer .glossary .entriesList{
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+footer .glossary .entriesList ul,
+footer .glossary .entriesList li{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+footer .glossary .entriesList .headerList{
+    color: #000;
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+}
+
+footer .glossary .entriesList > li{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+}
+
+footer .glossary .entriesList > li ul{
+    text-align: left;
+}
+
+footer .glossary .entriesList > li ul li{
+    margin-bottom: 17px;
+    font-size: 14px;
+}
+
+footer .glossary .entriesList > li ul li a:visited,
+footer .glossary .entriesList > li ul li a{
+    text-decoration: none;
+    color: #c2c2c2;
+}
+
+
+footer .glossary .entriesList > li ul li:last-child{
+    margin: 0;
+}
+
+
+footer .legal{
+    border-top: solid 1px #c2c2c254;
+    text-align: right;
+    padding-top: 27px;
+    color: #c2c2c2;
+}
+
+footer .legal p{
+    font-size: 11px;
+}
+
+footer .legal a{
+    color: #33a9fd;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer .legal p:first-child{
+    float:left;
+}
+
+@media screen and (max-width:1280px){
+    .container{
+        width: 992px;
+    }
+}
+
+@media screen and (max-width:1080px){
+    .container{
+        width: 768px;
+    }
+}
+
+@media screen and (max-width:898px){
+    .container{
+        width: 640px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .container{
+        width: 540px;
+    }
+
+    footer .glossary .entriesList > li{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .container{
+        width: calc(100% - 80px);
+    }
+
+    footer{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    footer .glossary{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    footer .glossary .glLogo{
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    footer .glossary .entriesList .headerList{
+        height: auto;
+    }
+
+    footer .glossary .entriesList > li{
+        margin: 0;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    footer .glossary .entriesList > li ul li{
+        margin-bottom: 10px;
+    }
+
+    footer .legal{
+        text-align: center;
+    }
+
+    footer .legal p:first-child{
+        float:none;
+    }
+
+    footer .legal p{
+        margin: 0;
+    }
+}
