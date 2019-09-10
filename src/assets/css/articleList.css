@@ -18,8 +18,9 @@
 
 #currentUser {
   background: #fff;
-  height: 200px;
-  padding-top: 35px;
+  min-height: 200px;
+  padding: 35px 0px;
+  box-sizing: border-box;
 }
 
 #currentUser a,
@@ -47,7 +48,7 @@
 
 #currentUser h2{
   margin-top: 45px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   color: #515166;
 }
 
@@ -60,6 +61,7 @@
   color: #33a9fd;
   font-size: 16px;
   font-weight: bold;
+  text-align: left;
 }
 
 #currentUser span[data-type]:before{
@@ -155,4 +157,70 @@
 .filters .fltList > div > span{
   font-weight: bold;
   display: block;
+}
+
+#articles > div > ul{
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+#articles > div > ul li{
+  cursor: pointer;
+  position: relative;
+  list-style-type: none;
+  min-height: 370px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 3px 1px #c9c9c929;
+  box-shadow: 1px 1px 3px 1px #c9c9c929;
+  border-radius: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#articles > div > ul li h3{
+  text-transform: capitalize;
+  margin-top: 0;
+  color:#33a9fd;
+}
+
+#articles > div > ul li p{
+  color: #90909f;
+  font-style: italic;
+  font-size: 13px;
+}
+
+@media screen and (max-width:1080px){
+  #currentUser h2{
+    margin-top: 25px;
+  }
+
+  #currentUser span[data-type]{
+    display: block;
+    text-align: left!important;
+    float: none;
+    margin-left: 20px;
+  }
+
+  #articles > div > ul{
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width:898px){
+
+}
+
+@media screen and (max-width:768px){
+  #articles > div > ul{
+      grid-template-columns: 1fr;
+  }
+
+  #articles > div > ul li{
+    min-height: 250px;
+  }
 }

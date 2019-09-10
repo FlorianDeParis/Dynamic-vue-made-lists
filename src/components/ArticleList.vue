@@ -31,9 +31,8 @@
         </div>
         <ul v-if="!failed">
           <li v-for="article in articles" :userId="article.userId" :key="article.id">
-            article
-              <h3>{{ article.title }}</h3>
-              <p>{{ article.body }}</p>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.body }}</p>
           </li>
         </ul>
         <ul v-else>Oops ! Something went wrong !</ul>
