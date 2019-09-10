@@ -14,7 +14,7 @@
                 </div>
             </div>
             <ul v-if="!failed">
-                <li v-for="user in users" :userId="user.id" :key="user.id" @click="selectUser">
+                <li v-for="user in users" :userId="user.id" :key="user.id" @click="selectUser(user)">
                   <div>
                     <h3>{{ user.name }}</h3>
                     <span data-type="phone">{{ user.phone }}</span>
@@ -51,36 +51,28 @@ export default {
       this.filterState = !(this.filterState)
     },
     selectUser: function (user) {
-      this.$store.state.current_user.id = user.id
-      this.$store.state.current_user.name = user.name
-      this.$store.state.current_user.phone = user.phone
-      this.$store.state.current_user.email = user.email
-      this.$store.state.current_user.address = user.address.street + ', ' + user.address.suite + ', ' + user.address.zipcode + ' ' + user.address.city
+      this.$router.push('/articles/' + user.id)
     },
     setUsers: function (data) {
       this.$store.user_collection = data
     }
   },
   created () {
-    var th = this
-    var request = new XMLHttpRequest()
+    let th = this
+    let request = new XMLHttpRequest()
     request.open('GET', this.usersAPI, true)
     request.onload = function () {
-      // Begin accessing JSON data here
-      var data = JSON.parse(this.response)
+      let data = JSON.parse(this.response)
       if (request.status >= 200 && request.status < 400) {
-        console.log('success')
         let users = {}
         th.counter = data.length
         th.users = data
-        console.log(th)
 
         data.forEach((x) => {
           users[x.id] = x
         })
         th.setUsers(users)
         th.failed = false
-
         console.log(th.$store)
       } else {
         console.log('error')

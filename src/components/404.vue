@@ -10,4 +10,10 @@
 <script>
 require('../assets/css/404.css')
 
+export default {
+  created () {
+    console.log(this.$store)
+  }
+}
+
 </script>

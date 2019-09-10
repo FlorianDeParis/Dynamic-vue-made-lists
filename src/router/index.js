@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import UserList from '@/components/UserList'
+import ArticleList from '@/components/ArticleList'
 import Error404 from '@/components/404'
 
 Vue.use(Router)
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'UserList',
+      component: UserList
     },
     {
       path: '/list',
@@ -20,7 +20,17 @@ export default new Router({
       component: UserList
     },
     {
+      path: '/articles/:userId',
+      name: 'ArticleList',
+      component: ArticleList
+    },
+    {
       path: '/404',
+      name: 'Error404',
+      component: Error404
+    },
+    {
+      path: '*',
       name: 'Error404',
       component: Error404
     }
