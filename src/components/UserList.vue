@@ -67,15 +67,12 @@ export default {
         let users = {}
         th.counter = data.length
         th.users = data
-
         data.forEach((x) => {
           users[x.id] = x
         })
         th.setUsers(users)
         th.failed = false
-        console.log(th.$store)
       } else {
-        console.log('error')
         th.counter = 0
         th.failed = true
       }

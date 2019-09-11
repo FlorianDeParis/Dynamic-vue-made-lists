@@ -68,7 +68,6 @@ export default {
       this.filterState = !(this.filterState)
     },
     callAPIUsers: function () {
-      console.log('into Call API')
       let th = this
       let request = new XMLHttpRequest()
       request.open('GET', this.userAPI.replace('USER_ID', this.$route.params.userId), true)
@@ -76,12 +75,9 @@ export default {
         let data = JSON.parse(this.response)
         if (request.status >= 200 && request.status < 400) {
           th.setCurrentUser(data)
-          console.log('fail false')
           th.failed = false
         } else {
-          console.log('error')
           th.counter = 0
-          console.log('fail true')
           th.failed = true
         }
       }
@@ -97,7 +93,6 @@ export default {
   },
   created () {
     // If User Collection is not set or if it's a direct navigation without store datas
-    console.log(this.$store)
     if (typeof this.$store.user_collection === 'undefined' || Object.keys(this.$store.user_collection).length === 0) {
       this.callAPIUsers()
     } else { // If User Collection is set
@@ -105,24 +100,17 @@ export default {
       this.setCurrentUser(this.$store.user_collection[this.$route.params.userId])
     }
 
-    console.log(this.$route.params.userId)
-    console.log(this.current_user)
-
     let th = this
     let request = new XMLHttpRequest()
     request.open('GET', this.articlesAPI.replace('USER_ID', this.$route.params.userId), true)
     request.onload = function () {
       let data = JSON.parse(this.response)
       if (request.status >= 200 && request.status < 400) {
-        console.log(data)
         th.articles = data
         th.counter = data.length
-        console.log('fail false')
         th.failed = false
       } else {
-        console.log('error')
         th.counter = 0
-        console.log('fail true')
         th.failed = true
       }
     }
